@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo JAVASCRIPT</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: whitesmoke;
+        }
+
+        h1 {
+            background-color: gray;
+            text-align: center;
+            color: black;
+            text-transform: uppercase;
+        }
+
+        p {
+            text-align: justify;
+            text-indent: 10px;
+            background-color: black;
+            color: white;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá MUNDO!</h1>
+    <p>Estou aprendendo JAVASCRIPT!</p>
+    <script>
+        window.alert("ALERTA!")
+        var nome = window.prompt("Qual seu nome? "); // window.promp retorna um STRING
+        window.alert("É um prazer te ver " + nome); // + nesse caso serve para concatenação.
+        var number1 = window.prompt("Insira um número: ") // STRING
+        var number2 = window.prompt("Insira um número2: ") // STRING
+        var soma = number1 + number2 // Resulta em uma soma concatenada
+        window.alert("A soma concatenada resultou em: " + soma)
+        var soma_correta = Number.parseFloat(number1) + Number.parseFloat(number2)
+        window.alert("A soma correta resultou em: " + soma_correta)
+        // Number.parseFloat()
+        // Number.paseInt()
+        // Number()
+        // n.toString()
+        // String()
+        window.alert(`Olá ${nome}, o resultado
+        da sua conta foi: ${soma_correta}`)
+
+        document.write(`${nome}, seu nome em maiúsculas é ${nome.toUpperCase()}<br>`)
+        document.write(`${nome}, o seu valor em BRL é: ${soma_correta.toLocaleString("pt-BR", {style:"currency", currency: 'BRL'})}`)
+    </script>
+</body>
+</html>

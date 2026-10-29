@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 50px;
+            margin-bottom: 5px;
+            padding: 30px;
+        }
+
+        main {
+            background-color: white;
+        }
+
+        #container-grid {
+            display: grid;
+            grid-template-columns: 10px 1fr 10px 1fr 10px;
+            background-color: rgb(199, 199, 199);
+        }
+
+        #container-ul {
+            grid-column: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+            margin: 5px;
+            padding: 10px;
+            height: 600px;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        #container-ul:hover {
+            transform: scale(1.01);
+        }
+
+        #container-ul ul{
+            font-size: 1.5em;
+            list-style: none;
+        }
+
+        #container-p {
+            grid-column: 4;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            background-color: gray;
+            margin: 5px;
+            padding: 10px;
+            height: 600px;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+
+        #container-p:hover {
+            transform: scale(1.01);
+        }
+        #container-p ul {
+            padding-top: 5px;
+            list-style: none;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DOM</h1>
+        <p>Aprendendo DOM</p>
+    </header>
+    <main>
+        <div id="container-grid">
+            <div id="container-ul">
+                <ul>
+                    <li><strong>D</strong> - Document</li>
+                    <li><strong>O</strong> - Object</li>
+                    <li><strong>M</strong> - Model</li>
+                </ul>
+            </div>
+            <div id="container-p">
+                <p>DOM funciona atráves de elementos, para acessá-los existem diferentes formas.</p>
+                    <ul>
+                        <li>Por MARCA</li>
+                        <li>Por ID</li>
+                        <li>Por NOME</li>
+                        <li>Por CLASSE</li>
+                        <li>Por SELETOR</li>
+                    </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        var lista2 = window.document.getElementsByTagName("ul")[1] //Pego a "Segunda UL"
+        window.document.write("Na segunda UL está escrito assim: " + lista2.innerHTML)
+        var div = window.document.getElementById("container-p")
+        div.style.backgroundColor = "white" //Pela variável seleciono a cor e altero
+        window.document.getElementById("container-ul").style.color = "red"
+
+        //Por querySelector:
+        window.document.querySelector("header").style.backgroundColor = "blue"
+        window.document.querySelector("div#container-ul").style.backgroundColor = "whitesmoke"
+    </script>
+</body>
+</html>

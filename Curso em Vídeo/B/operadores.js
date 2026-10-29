@@ -37,5 +37,5 @@ console.log(true || true)
 var media = 6.5
 console.log("TERNÁRIO")
 console.log(`Resultado: ${media >= 7.0 ? "APROVADO" : "REPROVADO"}`) //Se a média é maior ou igual a 7, Aprovado.
-var resultado = media >= 6.0 ? "Resultado agora é aprovado" : "Resultado agora é reprovado"
+var resultado = media >= 6.0 ? "Resultado agora é aprovado" : "Resultado agora é reprovado" // Atribui o valor
 console.log(resultado)

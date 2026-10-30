@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        body {
+            font-size: 1.5em;
+        }
+        #area {
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicou()" onmouseenter="entrar()" onmouseout="sair()"> <!--Coloco o nome do método, onclick vai chamar - Função()... -->
+        Interaja...
+    </div>
+
+
+    <script>
+        function clicou() {
+            if (window.document.getElementById("area").style.backgroundColor == "green") {
+                window.document.getElementById("area").style.backgroundColor = "red"
+            }
+            else {
+                window.document.getElementById("area").style.backgroundColor = "green"
+            }
+        }
+        function entrar() {
+            window.document.getElementById("area").innerText = "Entrou!"
+        }
+
+        function sair() {
+            window.document.getElementById("area").innerText = "Saiu!"
+        }
+    </script>
+</body>
+</html>

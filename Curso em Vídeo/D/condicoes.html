@@ -19,9 +19,9 @@
             var velocidade = Number(velocidade.value);
             var local_resposta = document.getElementById("resposta");
 
-            local_resposta.innerHTML = `<p>Sua velocidade atual é de: ${velocidade}</p>`
+            local_resposta.innerHTML = `<p>Sua velocidade atual é de: <strong>${velocidade}</strong></p>`
             if (velocidade > 60) {
-                local_resposta.innerHTML += `<p> MULTADO!. </p>`;
+                local_resposta.innerHTML += `<p> MULTADO! </p>`;
             }
             else {
                 local_resposta.innerHTML += `<p> SEM MULTAS. </p>`;

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        /*Variáveis*/
+        :root {
+            --fundo-header: #000000;
+            --fundo-footer: #000000;
+            --fundo-main: #ececec;
+            --fundo-section: #686868;
+            --titulo: #ffffff;
+            --texto: #ffffff;
+            --cartao: #3f3f3fc5;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            background-color: var(--fundo-header);
+            color: var(--texto);
+            padding: 20px;
+            margin-bottom: 5px;
+        }
+
+        main {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 5px 1fr 5px;
+            grid-template-rows: 1fr;
+            background-color: var(--fundo-main);
+        }
+
+        section#container {
+            grid-column: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--fundo-section);
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        #conteudo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 95%;
+            background-color: var(--cartao);
+            height: 100%;
+        }
+
+        #parag-msg {
+            color: var(--texto);
+            text-align: center;
+        }
+
+        #section-img {
+            border-radius: 5px;
+            width: 200px;
+            margin-top: 10px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            color: var(--texto);
+            background-color: var(--fundo-header);
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="header-msg">Bom dia!</h1>
+    </header>
+    <main>
+        <section id="container">
+            <div id="conteudo">
+                <p id="parag-msg">Olá, agora são...</p>
+                <img src="#" alt="Imagem de acordo com a hora" id="section-img">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por <strong>Pedro Augusto</strong></p>
+    </footer>
+
+    <script>
+
+        //Aqui começa a prática, fiz sem ver o tutorial, apenas com que entendi
+
+        var header_msg = document.getElementById("header-msg"); 
+        var parag_msg = document.getElementById("parag-msg");
+        var section_img = document.getElementById("section-img");
+        var hora = new Date();
+        var hora_atual = hora.getHours()
+        var minuto_atual = hora.getMinutes()
+
+        //Horas
+        if (hora_atual < 12) {
+            header_msg.innerHTML = "BOM DIA!";
+            parag_msg.innerHTML = `Olá chefe, preparado para a manhã? agora são exatamente <strong>${hora_atual}</strong>`;
+            document.getElementById("section-img").src = "img-manha.jpg"
+        }
+        else if (hora_atual < 18) {
+            header_msg.innerHTML = "BOA TARDE!";
+            parag_msg.innerHTML = `Que bom que chegou! Como está indo sua tarde? agora são exatamente <strong>${hora_atual}</strong>`;
+            document.getElementById("section-img").src = "img-tarde.jpg"
+        }
+
+        //Desenvolvi completo com a img apenas para noite
+        else {
+            header_msg.innerHTML = "BOA NOITE!";
+            parag_msg.innerHTML = `Fala mestre, como está sendo a noite? agora são exatamente <br> <strong>${hora_atual}:${minuto_atual}</strong>`;
+            document.getElementById("section-img").src = "img-noite.jpg"
+        }
+
+    </script>
+</body>
+</html>

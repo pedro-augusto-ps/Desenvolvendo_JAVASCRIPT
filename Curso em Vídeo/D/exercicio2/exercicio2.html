@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <form action="#">
+                    <label for="iddate">Data de Nascimento</label>
+                    <input type="date" name="fdate" id="iddate">
+
+                    <fieldset>
+                        <legend>Sexo</legend>
+                        <input type="radio" name="sex-input" id="idmasc" checked>
+                        <label for="idradio">Masculino</label>
+                        <input type="radio" name="sex-input" id="idfem">
+                        <label for="idfem">Feminino</label>
+                    </fieldset>
+
+                    <input type="button" value="Verificar" onclick="verificar_idade()">
+                </form>
+            </div>
+
+            <div id="res">
+                <p>Preencha os dados acima para Verificar o resultado</p> <!--Aqui é exibido a resposta -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Pedro Augusto</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

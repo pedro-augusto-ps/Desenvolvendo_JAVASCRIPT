@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 2.0em;
+
+}
+
+#pagina {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: blue;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    color: white;
+    padding: 10px;
+
+}
+
+main {
+    display: grid;
+    grid-template-columns: 5px 1fr 5px;
+    margin: 5px;
+    flex: 1;
+}
+
+section {
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: blue;
+    width: 70%;
+    height: 70%;
+    border-radius: 8px;
+}
+
+form {
+    background-color: white;
+    padding: 60px;
+}
+
+#div-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="date"] {
+    padding: 10px;
+    background-color: blue;
+    border-radius: 6px;
+    border: none;
+}
+
+fieldset {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    background-color: red;
+    border: none;
+}
+
+legend {
+    padding: 0 6px;
+    font-weight: bold;
+    text-align: center;
+}

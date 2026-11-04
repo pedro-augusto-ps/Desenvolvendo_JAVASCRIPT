@@ -7,40 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Verificador de Idade</h1>
-    </header>
+    <div id="pagina">
+        <header>
+            <h1>Verificador de Idade</h1>
+        </header>
 
-    <main>
-        <section>
-            <div>
-                <form action="#">
-                    <label for="iddate">Data de Nascimento</label>
-                    <input type="date" name="fdate" id="iddate">
+        <main>
+            <section>
+                <div id="container-form">
+                    <form action="#">
 
-                    <fieldset>
-                        <legend>Sexo</legend>
-                        <input type="radio" name="sex-input" id="idmasc" checked>
-                        <label for="idradio">Masculino</label>
-                        <input type="radio" name="sex-input" id="idfem">
-                        <label for="idfem">Feminino</label>
-                    </fieldset>
+                        <div id="div-input">
+                            <label for="iddate">Data de Nascimento</label>
+                            <input type="date" name="fdate" id="iddate">
+                        </div>
 
-                    <input type="button" value="Verificar" onclick="verificar_idade()">
-                </form>
-            </div>
-
-            <div id="res">
-                <p>Preencha os dados acima para Verificar o resultado</p> <!--Aqui é exibido a resposta -->
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; Pedro Augusto</p>
-    </footer>
-
-    <script src="script.js"></script>
+                        <fieldset>
+                            <legend>Sexo</legend>
+                            <input type="radio" name="sex-input" id="idmasc" checked>
+                            <label for="idradio">Masculino</label>
+                            <input type="radio" name="sex-input" id="idfem">
+                            <label for="idfem">Feminino</label>
+                        </fieldset>
+                        <input type="button" value="Verificar" onclick="verificar_idade()">
+                    </form>
+                </div>
+                <div id="res">
+                    <p>Preencha os dados acima para Verificar o resultado</p> <!--Aqui é exibido a resposta -->
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; Pedro Augusto</p>
+        </footer>
+        <script src="script.js"></script>
+    </div>
 
 </body>
 </html>

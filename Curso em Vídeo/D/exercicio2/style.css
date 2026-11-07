@@ -18,18 +18,19 @@ body {
     flex-direction: column;
 }
 
-header {
-    background-color: blue;
+header, footer{
+    background-color: black;
     height: 60px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    color: white;
 }
 
 header h1 {
-    color: white;
     padding: 10px;
-
 }
 
 main {
@@ -45,35 +46,33 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-}
-
-#container-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: blue;
-    width: 70%;
-    height: 70%;
-    border-radius: 8px;
 }
 
 form {
-    background-color: white;
-    padding: 60px;
+    background-color: rgba(161, 161, 161, 0.699);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 3px 4px 8px 0px;
 }
 
 #div-input {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+
+#div-input label {
+    text-transform: uppercase;
+    font-size: 1.1em;
+    flex-wrap: wrap;
 }
 
 input[type="date"] {
     padding: 10px;
-    background-color: blue;
+    text-align: center;
+    width: 100%;
+    background-color: white;
     border-radius: 6px;
     border: none;
 }
@@ -82,12 +81,62 @@ fieldset {
     display: flex;
     gap: 15px;
     padding: 10px;
-    background-color: red;
+    background-color: white;
     border: none;
+    border-radius: 8px;
+}
+
+fieldset input[type="radio"] {
+    cursor: pointer;
+    color: black;
+}
+
+fieldset input[type="radio"]:checked {
+    accent-color: black; /*Altera a cor do botão*/
+}
+
+fieldset input[type="radio"]:hover {
+    transform: scale(1.1);
 }
 
 legend {
     padding: 0 6px;
     font-weight: bold;
     text-align: center;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form input[type="button"] {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: white;
+    border: none;
+    transition: scale 0.3 ease;
+
+}
+
+form input[type="button"]:hover {
+    transform: scale(1.1);
+    background-color: rgb(226, 226, 226);
+}
+
+#res {
+    display: block;
+    width: 400px;
+    margin-top: 20px;
+    background-color: white;
+    border-color: black;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+footer {
+    height: 40px;
 }

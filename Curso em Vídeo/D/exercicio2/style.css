@@ -36,7 +36,6 @@ header h1 {
 main {
     display: grid;
     grid-template-columns: 5px 1fr 5px;
-    margin: 5px;
     flex: 1;
 }
 
@@ -115,10 +114,10 @@ form input[type="button"] {
     border-radius: 8px;
     text-transform: uppercase;
     text-align: center;
+    font-weight: bold;
     background-color: white;
     border: none;
-    transition: scale 0.3 ease;
-
+    transition: transform 0.3s ease;
 }
 
 form input[type="button"]:hover {
@@ -131,7 +130,7 @@ form input[type="button"]:hover {
     width: 400px;
     margin-top: 20px;
     background-color: white;
-    border-color: black;
+    border: 1px solid black;
     border-radius: 8px;
     text-align: center;
     font-size: 0.8em;

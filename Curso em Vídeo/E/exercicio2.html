@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex; /*Novo método para fazer o main ocupar a altura toda*/
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            background-color: greenyellow;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        main {
+            display: grid;
+            flex: 1; /*Com o body flex, usar flex:1 aqui faz o main crescer e ocupar tudo entre footer e header*/
+            grid-template-columns: 5px 1fr 5px;
+            background-color: rgb(151, 151, 151);
+        }
+
+        section {
+            grid-column: 2; /*Filho do main*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 5px 0px;
+            background-color: red;
+        }
+        
+        .cartao {
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+
+    <main>
+        <section>
+            <div class="cartao">
+                <div id="container-num">
+                    <input type="number" name="" id="">
+                </div>
+                <div id="container-select">
+                    <select name="" id=""></select>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;Pedro Augusto</p>
+    </footer>
+</body>
+</html>

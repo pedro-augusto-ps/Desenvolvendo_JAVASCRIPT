@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(55, 55, 252, 0.39);
+        }
+
+        h1 {
+            text-align: center;
+            padding: 5px;
+            background-color: white;
+
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        
+        section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 5px;
+        }
+        
+        div label {
+            font-size: 1.2em;
+            text-transform: uppercase;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        div input[type="number"] {
+            padding: 5px;
+        }
+
+        input[type="button"] {
+            padding: 3px;
+            background-color: rgba(76, 76, 250, 0.233);
+            transition: transform 0.3s ease;
+            border: 1px solid black;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        input[type="button"]:hover {
+            transform: scale(1.1);
+            background-color: rgba(76, 76, 250, 0.377);
+        }
+
+        div#res {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid rgba(76, 76, 250, 0.377);;
+            border-radius: 8px;
+
+            height: 100px; /*Pedi ajuda da IA nesse treco para configurar essa barra de rolagem, ficou TOP*/
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+            height: calc(100vh - 80vh - 47px);
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Contador de passos
+    </h1>
+    <main>
+        <section>
+
+            <div id="inicio">
+                <label for="inicio">Início:</label>
+                <input type="number" name="inicio" id="idinicio">
+            </div>
+            <div id="fim">
+                <label for="fim">Fim:</label>
+                <input type="number" name="fim" id="idfim">
+            </div>
+            <div>
+                <label for="passo">Passo:</label>
+                <input type="number" name="passo" id="idpasso">
+            </div>
+
+            <input type="button" value="Verificar" onclick="verificar()">
+            <div id="res"> RESULTADO:</div>
+        </section>
+    </main>
+
+    <footer>&copy;Pedro</footer>
+
+    <script>
+        function verificar() {
+            //Começando a perceber a diferença de VAR, LET e CONST
+            //Já tinha a base de escopo devido ao python, agora só analisar um pouco mais.
+
+            const input_inicio = Number(document.getElementById("idinicio").value); //Transformo em Number
+            const input_fim = Number(document.getElementById("idfim").value); //Transformo em Number
+            const input_passo = Number(document.getElementById("idpasso").value); //Transformo em Number
+            const div_resultado = document.getElementById("res");
+            var contador = input_inicio
+
+            if (input_passo === 0 ) {
+                div_resultado.innerHTML = "Passo 0 gera infinitos resultados" //Remove o texto anterior
+            }
+
+            else {
+                div_resultado.innerHTML = "" //Remove o texto anterior
+                for (contador; contador <= input_fim; contador += input_passo) {  // (inicio; fim; passo)
+
+                    div_resultado.innerHTML += `&rarr; ${contador}  `
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

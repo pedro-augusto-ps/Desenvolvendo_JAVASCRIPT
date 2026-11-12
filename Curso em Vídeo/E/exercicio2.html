@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabuada</title>
     <style>
+
+        :root {
+            --fundo-cabecalho: #4E4F3D;
+            --fundo-principal: #99A265;
+            --borda: #3E513B;
+            --texto: #EADEDA;
+
+        }
         * {
             padding: 0px;
             margin: 0px;
@@ -23,7 +31,7 @@
             justify-content: center;
             align-items: center;
             height: 30px;
-            background-color: greenyellow;
+            background-color: var(--fundo-cabecalho);
         }
 
         h1 {
@@ -34,7 +42,7 @@
             display: grid;
             flex: 1; /*Com o body flex, usar flex:1 aqui faz o main crescer e ocupar tudo entre footer e header*/
             grid-template-columns: 5px 1fr 5px;
-            background-color: rgb(151, 151, 151);
+            background-color: white;
         }
 
         section {
@@ -44,35 +52,74 @@
             align-items: center;
             flex-direction: column;
             margin: 5px 0px;
-            background-color: red;
+            background-color: var(--fundo-principal);
         }
         
         .cartao {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
             width: 100%;
             max-width: 350px;
+            height: 100%;
+            max-height: 350px;
             padding: 20px;
             border-radius: 8px;
             background-color: white;
-            
         }
 
+        #container-num {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* background-color: var(--borda);
+            color: white;
+            text-align: center;
+            border-radius: 8px; */
+            
+        }
+        #container-num label {
+            background-color: var(--borda);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+        #container-num input[type="number"] {
+            padding: 5px;
+            margin-top: 20px;
+            width: 100%;
+            border: 1px solid var(--borda);
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--fundo-cabecalho);
+            color: white;
+        }
 
     </style>
 </head>
 <body>
     <header>
-        <h1></h1>
+        <h1>Titulo</h1>
     </header>
 
     <main>
         <section>
             <div class="cartao">
                 <div id="container-num">
-                    <input type="number" name="" id="">
+                    <label for="num_tabuada">Insira o número para ver a tabuada</label>
+                    <input type="number" name="num_tabuada" id="idnum_tabuada">
                 </div>
                 <div id="container-select">
-                    <select name="" id=""></select>
+                    <!-- <select name="select" id="idselect"></select> -->
                 </div>
+                <input type="button" value="Verificar" onclick="VerTabuada()">
             </div>
         </section>
     </main>
@@ -80,5 +127,20 @@
     <footer>
         <p>&copy;Pedro Augusto</p>
     </footer>
+
+    <script>
+
+
+        function VerTabuada() {
+            const num_fornecido = document.getElementById("num_tabuada");
+            const caixa_select = document.getElementById("container-select");
+
+            for ( i=1; i<=10; i++) {
+                var resultado = num_fornecido * i;
+                caixa_select.innerHTML += resultado;
+            }
+            
+        }
+    </script>
 </body>
 </html>

@@ -9,8 +9,8 @@
         :root {
             --fundo-cabecalho: #4E4F3D;
             --fundo-principal: #99A265;
-            --borda: #3E513B;
-            --texto: #EADEDA;
+            --verde-escuro: #3E513B;
+            --branco: #EADEDA;
 
         }
         * {
@@ -26,16 +26,17 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
-        header {
+        header,footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 30px;
+            height: 40px;
             background-color: var(--fundo-cabecalho);
         }
 
         h1 {
             color: white;
+            text-transform: uppercase;
         }
 
         main {
@@ -63,7 +64,7 @@
             width: 100%;
             max-width: 350px;
             height: 100%;
-            max-height: 350px;
+            max-height: 400px;
             padding: 20px;
             border-radius: 8px;
             background-color: white;
@@ -74,31 +75,50 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            /* background-color: var(--borda);
-            color: white;
-            text-align: center;
-            border-radius: 8px; */
-            
         }
+
         #container-num label {
-            background-color: var(--borda);
+            background-color: var(--verde-escuro);
             padding: 20px;
             color: white;
             text-align: center;
             border-radius: 8px;
         }
+
         #container-num input[type="number"] {
             padding: 5px;
-            margin-top: 20px;
+            margin: 20px 0px;
             width: 100%;
-            border: 1px solid var(--borda);
+            border: 1px solid var(--verde-escuro);
+        }
+        
+        .cartao input[type="button"] {
+            padding: 5px;
+            width: 100%;
+            margin-top: 20px;
+            background-color: var(--verde-escuro);
+            color: var(--branco);
+            text-transform: uppercase;
+            border: 1px solid black;
+            border-radius: 5px;
+            transition: transform 0.3s ease, font-size 0.4s ease, border-left 0.3s ease;
+        }
+
+        .cartao input[type="button"]:hover {
+            transform: scale(1.1);
+            font-size: 1em;
+        }
+
+        select {
+            padding: 10px;
+        }
+
+        select option {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.0em;
         }
 
         footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: var(--fundo-cabecalho);
             color: white;
         }
 
@@ -106,7 +126,7 @@
 </head>
 <body>
     <header>
-        <h1>Titulo</h1>
+        <h1>Tabuada</h1>
     </header>
 
     <main>
@@ -117,7 +137,9 @@
                     <input type="number" name="num_tabuada" id="idnum_tabuada">
                 </div>
                 <div id="container-select">
-                    <!-- <select name="select" id="idselect"></select> -->
+                    <select name="select" id="idselect" size="10">
+                        <option>Insira um número!</option>
+                    </select>
                 </div>
                 <input type="button" value="Verificar" onclick="VerTabuada()">
             </div>
@@ -132,12 +154,23 @@
 
 
         function VerTabuada() {
-            const num_fornecido = document.getElementById("num_tabuada");
-            const caixa_select = document.getElementById("container-select");
+            const num_fornecido = Number(document.getElementById("idnum_tabuada").value);
+            const caixa_select = document.getElementById("idselect");
+            
+            if (num_fornecido.length == 0) {
+                caixa_select.innerHTML = "Porfavor insira um número válido";
+            }
 
-            for ( i=1; i<=10; i++) {
-                var resultado = num_fornecido * i;
-                caixa_select.innerHTML += resultado;
+            else {
+                let contador = 1;
+                caixa_select.innerHTML = '' // Limpa a caixa do select
+
+                while (contador <= 10) {
+                    let item = document.createElement('option'); //Select do HTML trabalho com Option, criou uma.
+                    item.text = `${contador} x ${num_fornecido} = ${num_fornecido * contador}`; // Multiplico
+                    caixa_select.appendChild(item); //Adiciono o filho item
+                    contador += 1;
+                }
             }
             
         }

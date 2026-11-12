@@ -157,8 +157,11 @@
             const num_fornecido = Number(document.getElementById("idnum_tabuada").value);
             const caixa_select = document.getElementById("idselect");
             
-            if (num_fornecido.length == 0) {
-                caixa_select.innerHTML = "Porfavor insira um número válido";
+            if (num_fornecido < 0) {
+                caixa_select.innerHTML = ''
+                let item = document.createElement('option');
+                item.text = "Porfavor insira um número válido";
+                caixa_select.appendChild(item)
             }
 
             else {

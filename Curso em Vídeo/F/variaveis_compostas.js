@@ -20,6 +20,6 @@ for (let i = 0; i < vetor.length; i++) {
     console.log(`Posição: ${i} Valor: ${vetor[i]}`);
 }
 
-for (let i in vetor) {
+for (let i in vetor) { 
     console.log(vetor[i]);
 }
